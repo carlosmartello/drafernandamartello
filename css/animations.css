@@ -618,6 +618,35 @@ body.modal-open {
     margin-bottom: var(--spacing-8);
 }
 
+/* ========== CARROSSEL "POR QUE NOS ESCOLHER" ========== */
+/* No celular e tablet, cada pilar ocupa toda a largura e pode ser deslizado. */
+@media (max-width: 1024px) {
+    .why-choose-carousel {
+        display: grid;
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 100%;
+        gap: var(--spacing-4);
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0 var(--spacing-1) var(--spacing-4);
+        margin-bottom: var(--spacing-8);
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .why-choose-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .why-choose-carousel > .card {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+}
+
 /* ========== PRINT STYLES ========== */
 @media print {
     .header,

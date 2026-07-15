@@ -151,7 +151,7 @@ O site é totalmente responsivo:
 
 ## 📞 Contato e Informações
 
-- **WhatsApp**: (21) 96473-1528
+- **WhatsApp**: (21) 99167-1781
 - **Instagram**: @dra.fernanda.martello
 - **Endereço**: Av. Leandro da Mota, 720, Duque de Caxias - RJ
 - **CRO**: 45875
