@@ -48,6 +48,18 @@
     margin-bottom: var(--spacing-4);
     text-align: center;
     overflow: hidden;
+    border: 0;
+    padding: 0;
+    cursor: zoom-in;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.carousel-item-image:hover,
+.carousel-item-image:focus-visible {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
 }
 
 .carousel-image {
@@ -83,6 +95,118 @@
     font-size: 0.75rem;
     font-style: italic;
     margin-bottom: 0;
+}
+
+/* Visualização ampliada do card */
+body.modal-open {
+    overflow: hidden;
+}
+
+.carousel-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    perspective: 1200px;
+}
+
+.carousel-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.carousel-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(18, 16, 13, 0.78);
+    backdrop-filter: blur(6px);
+}
+
+.carousel-modal-card {
+    position: relative;
+    z-index: 1;
+    width: min(760px, 92vw);
+    max-height: 88vh;
+    overflow: auto;
+    border-radius: var(--radius-lg);
+    background: var(--card-bg);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.45);
+    transform: rotateX(12deg) rotateY(-8deg) scale(0.82);
+    transform-origin: center;
+    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.carousel-modal.is-open .carousel-modal-card {
+    transform: rotateX(0) rotateY(0) scale(1);
+}
+
+.carousel-modal-image {
+    display: block;
+    width: 100%;
+    max-height: 58vh;
+    object-fit: contain;
+    background: #16120c;
+}
+
+.carousel-modal-content {
+    padding: var(--spacing-6);
+}
+
+.carousel-modal-content h3 {
+    margin-bottom: var(--spacing-2);
+}
+
+.carousel-modal-desc {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.carousel-modal-texto {
+    margin-bottom: 0;
+    color: var(--muted-foreground);
+}
+
+.carousel-modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 2;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.58);
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.carousel-modal-close:hover,
+.carousel-modal-close:focus-visible {
+    background: var(--primary);
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .carousel-modal {
+        padding: 1rem;
+    }
+
+    .carousel-modal-card {
+        width: 94vw;
+        max-height: 90vh;
+    }
+
+    .carousel-modal-image {
+        max-height: 52vh;
+    }
 }
 
 /* Botões do Carrossel */

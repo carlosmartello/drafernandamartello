@@ -66,18 +66,24 @@ function initCarousel() {
     
     if (!carouselTrack) return;
     
-    // Renderizar items do carrossel
+    const carouselModal = createCarouselModal();
+
+    // Renderizar itens do carrossel
     carouselItems.forEach((item) => {
         const itemElement = document.createElement('div');
         itemElement.className = 'carousel-item card card-premium';
         itemElement.innerHTML = `
-            <div class="carousel-item-image">
+            <button type="button" class="carousel-item-image" aria-label="Ampliar resultado: ${item.title}">
                 <img src="${item.image}" alt="${item.title} - Antes e Depois" class="carousel-image">
-            </div>
+            </button>
             <h3>${item.title}</h3>
             <p>${item.desc}</p>
             <p>${item.texto}</p>
         `;
+
+        itemElement.querySelector('.carousel-item-image').addEventListener('click', () => {
+            openCarouselModal(carouselModal, item);
+        });
         carouselTrack.appendChild(itemElement);
     });
     
@@ -106,6 +112,53 @@ function initCarousel() {
         carousel.style.scrollBehavior = 'smooth';
         carousel.scrollLeft = currentScroll;
     }
+}
+
+/* ========== VISUALIZAÇÃO AMPLIADA DO CARROSSEL ========== */
+function createCarouselModal() {
+    const modal = document.createElement('div');
+    modal.className = 'carousel-modal';
+    modal.setAttribute('aria-hidden', 'true');
+    modal.innerHTML = `
+        <div class="carousel-modal-backdrop"></div>
+        <article class="carousel-modal-card" role="dialog" aria-modal="true" aria-label="Resultado ampliado">
+            <button type="button" class="carousel-modal-close" aria-label="Fechar visualização">×</button>
+            <img class="carousel-modal-image" alt="">
+            <div class="carousel-modal-content">
+                <h3></h3>
+                <p class="carousel-modal-desc"></p>
+                <p class="carousel-modal-texto"></p>
+            </div>
+        </article>
+    `;
+
+    const closeModal = () => closeCarouselModal(modal);
+    modal.querySelector('.carousel-modal-close').addEventListener('click', closeModal);
+    modal.querySelector('.carousel-modal-backdrop').addEventListener('click', closeModal);
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+
+    document.body.appendChild(modal);
+    return modal;
+}
+
+function openCarouselModal(modal, item) {
+    modal.querySelector('.carousel-modal-image').src = item.image;
+    modal.querySelector('.carousel-modal-image').alt = `${item.title} - Antes e Depois`;
+    modal.querySelector('.carousel-modal-content h3').textContent = item.title;
+    modal.querySelector('.carousel-modal-desc').textContent = item.desc;
+    modal.querySelector('.carousel-modal-texto').textContent = item.texto;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    modal.querySelector('.carousel-modal-close').focus();
+}
+
+function closeCarouselModal(modal) {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
 }
 
 /* ========== INTERSECTION OBSERVER (Animações ao scroll) ========== */
