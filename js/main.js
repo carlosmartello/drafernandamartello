@@ -2,42 +2,49 @@
    MAIN.JS - Inicialização e Lógica Principal
    ============================================ */
 
-// Dados do Carrossel de Antes e Depois
+// Dados do Carrossel de Antes e Depois.
+// Para incluir um novo caso, copie um bloco completo, altere os textos e a imagem.
 const carouselItems = [
     { 
         id: 1, 
         title: "Protocolo Martello Lift®", 
         desc: "Reposição de volume e sustentação",
+        texto: "Resultado obtido de forma personalizada. Planejamento individual conforme as características anatômicas da paciente.",
         image: "assets/img/antes_depois_1.jpg"
     },
     { 
         id: 2, 
         title: "Protocolo Martello Lift®", 
         desc: "Rejuvenescimento global",
+        texto: "Resultado obtido de forma personalizada. Planejamento individual conforme as características anatômicas da paciente.",
         image: "assets/img/antes_depois_2.jpg"
     },
     { 
         id: 3, 
         title: "Protocolo Martello Lift®", 
         desc: "Definição e harmonia",
+        texto: "Resultado obtido de forma personalizada. Planejamento individual conforme as características anatômicas da paciente.",
         image: "assets/img/antes_depois_3.jpg"
     },
     { 
         id: 4, 
         title: "Protocolo Martello Lift®", 
         desc: "Restauração de volume",
+        texto: "Resultado obtido de forma personalizada. Planejamento individual conforme as características anatômicas da paciente.",
         image: "assets/img/antes_depois_4.jpg"
     },
     { 
         id: 5, 
         title: "Protocolo Martello Lift®", 
         desc: "Sustentação e elevação",
+        texto: "Resultado obtido de forma personalizada. Planejamento individual conforme as características anatômicas da paciente.",
         image: "assets/img/antes_depois_5.jpg"
     },
     { 
         id: 6, 
         title: "Protocolo Martello Lift®", 
         desc: "Transformação elegante",
+        texto: "Resultado obtido de forma personalizada. Planejamento individual conforme as características anatômicas da paciente.",
         image: "assets/img/antes_depois_6.jpg"
     }
 ];
@@ -69,7 +76,7 @@ function initCarousel() {
             </div>
             <h3>${item.title}</h3>
             <p>${item.desc}</p>
-            <p>Resultado obtido de forma personalizada. Planejamento individual com resultados que variam conforme as características anatômicas de cada paciente.</p>
+            <p>${item.texto}</p>
         `;
         carouselTrack.appendChild(itemElement);
     });
