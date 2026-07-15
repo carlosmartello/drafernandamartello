@@ -8,45 +8,78 @@ const carouselItems = [
     { 
         id: 1, 
         title: "Protocolo Martello Lift®", 
-        desc: "Reposição de volume e sustentação",
-        texto: "Resultado obtido de forma personalizada. Planejamento individual conforme as características anatômicas da paciente.",
+        desc: "Perfil completo.",
+        texto: "Rinomodelação associada ao contorno mandibular, mento, malar e harmonização labial para promover proporção, definição e um perfil facial mais harmonioso",
         image: "assets/img/antes_depois_1.jpg"
     },
     { 
         id: 2, 
         title: "Protocolo Martello Lift®", 
         desc: "Rejuvenescimento global",
-        texto: "Resultado obtido de forma personalizada. Planejamento individual conforme as características anatômicas da paciente.",
+        texto: "Contorno mandibular, mento, malar, lábios e toxina botulínica, realizados de forma personalizada para promover equilíbrio facial, definição dos contornos e um resultado natural.",
         image: "assets/img/antes_depois_2.jpg"
     },
     { 
         id: 3, 
         title: "Protocolo Martello Lift®", 
-        desc: "Definição e harmonia",
-        texto: "Resultado obtido de forma personalizada. Planejamento individual conforme as características anatômicas da paciente.",
+        desc: "Equilíbrio, definição e naturalidade",
+        texto: "Associação de rinomodelação, contorno mandibular, mento e harmonização labial para realçar o perfil facial, restaurar as proporções e evidenciar a beleza de forma elegante e personalizada.",
         image: "assets/img/antes_depois_3.jpg"
     },
     { 
         id: 4, 
         title: "Protocolo Martello Lift®", 
-        desc: "Restauração de volume",
-        texto: "Resultado obtido de forma personalizada. Planejamento individual conforme as características anatômicas da paciente.",
+        desc: "Equilíbrio e definição do perfil.",
+        texto: "Correção das irregularidades do nariz com melhora da projeção e da ponta nasal, proporcionando um perfil mais harmonioso, sem procedimento cirúrgico.",
         image: "assets/img/antes_depois_4.jpg"
     },
     { 
         id: 5, 
         title: "Protocolo Martello Lift®", 
-        desc: "Sustentação e elevação",
-        texto: "Resultado obtido de forma personalizada. Planejamento individual conforme as características anatômicas da paciente.",
+        desc: "Equilíbrio e definição facial.",
+        texto: "Associação de rinomodelação, contorno mandibular, mento, malar e harmonização labial para realçar os traços, melhorar as proporções e preservar a identidade da paciente.",
         image: "assets/img/antes_depois_5.jpg"
     },
     { 
         id: 6, 
         title: "Protocolo Martello Lift®", 
-        desc: "Transformação elegante",
-        texto: "Resultado obtido de forma personalizada. Planejamento individual conforme as características anatômicas da paciente.",
+        desc: "Escultura Nasal Sem Cortes",
+        texto: "Correção sutil de pequenas imperfeições e sustentação da ponta nasal. Devolvemos a harmonia e a leveza ao seu perfil por meio de um procedimento injetável moderno, seguro e com resultados imediatos e naturais.",
         image: "assets/img/antes_depois_6.jpg"
-    }
+    },
+
+    { 
+        id: 7, 
+        title: "Protocolo Martello Lift®", 
+        desc: "Leveza, Contorno e Naturalidade",
+        texto: "Associação de toxina botulínica e harmonização facial para suavizar as linhas de expressão, redefinir os contornos e promover um aspecto mais leve, descansado e natural.",
+        image: "assets/img/antes_depois_7.jpg"
+    },
+
+     { 
+        id: 8, 
+        title: "Protocolo Martello Lift®", 
+        desc: "Rejuvenescimento facial personalizado.",
+        texto: "Planejamento individualizado com reposição estratégica de volumes, definição dos contornos faciais e harmonização labial para restaurar a sustentação, suavizar os sinais do envelhecimento e preservar a naturalidade.",
+        image: "assets/img/antes_depois_8.jpg"
+    },
+
+       { 
+        id: 9, 
+        title: "Protocolo Martello Lift®", 
+        desc: "Transformação do perfil facial.",
+        texto: "Associação de rinomodelação e harmonização labial para criar um perfil mais harmonioso e naturalmente elegante.",
+        image: "assets/img/antes_depois_9.jpg"
+    },
+
+      { 
+        id: 10, 
+        title: "Protocolo Martello Lift®", 
+        desc: "Firmeza e sustentação de dentro para fora.",
+        texto: "O bioestimulador estimula a produção natural de colágeno, melhorando a firmeza da pele, a sustentação facial e suavizando a flacidez de forma progressiva e natural.",
+        image: "assets/img/antes_depois_10.jpg"
+    },
+
 ];
 
 // Inicialização quando o documento estiver pronto
