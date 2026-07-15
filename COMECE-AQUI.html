@@ -1,0 +1,314 @@
+<!-- INSTRUÇÕES RÁPIDAS DE INÍCIO -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Como Começar - Website Dra. Fernanda Martello</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #C8A96A 0%, #E8D4A8 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            padding: 3rem;
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        h1 {
+            color: #C8A96A;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .steps {
+            display: grid;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .step {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #C8A96A;
+            transition: all 0.3s ease;
+        }
+        
+        .step:hover {
+            box-shadow: 0 4px 12px rgba(200, 169, 106, 0.2);
+            transform: translateX(5px);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: #C8A96A;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .step h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .step p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .code {
+            background: #2c2c2c;
+            color: #C8A96A;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: 'Courier New', monospace;
+            margin-top: 0.5rem;
+            overflow-x: auto;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: #C8A96A;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #A78A4F;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(200, 169, 106, 0.3);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #C8A96A;
+            border: 2px solid #C8A96A;
+        }
+        
+        .btn-secondary:hover {
+            background: #f5f5f5;
+        }
+        
+        .file-structure {
+            background: #2c2c2c;
+            color: #0f0;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+            font-size: 0.875rem;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .info-message {
+            background: #e2e3e5;
+            border: 1px solid #d6d8db;
+            color: #383d41;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            color: #999;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Bem-vindo!</h1>
+        <p class="subtitle">Seu website está pronto. Aqui estão as instruções de início rápido.</p>
+        
+        <div class="success-message">
+            ✅ <strong>Status:</strong> Website HTML, CSS e JavaScript puro 100% funcional!
+        </div>
+        
+        <h2 style="color: #333; margin-top: 2rem; margin-bottom: 1rem;">🎯 Como Começar</h2>
+        
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Abra o Arquivo index.html</h3>
+                <p>Localize a pasta <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">website-puro</code> no seu computador e clique duplo no arquivo <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">index.html</code></p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #999;">Caminho completo: <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">website-puro/index.html</code></p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Pronto! O Website Rodará</h3>
+                <p>O seu navegador padrão abrirá com o website completo. Nenhum comando no terminal é necessário!</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #999;">👉 O site rodará localmente sem precisar de servidor</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>(Opcional) Use Live Server no VS Code</h3>
+                <p>Para melhor experiência de desenvolvimento:</p>
+                <ol style="margin-left: 1.5rem; color: #666; margin-top: 0.5rem;">
+                    <li>Abra a pasta <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">website-puro</code> no VS Code</li>
+                    <li>Instale a extensão "Live Server" (se não tiver)</li>
+                    <li>Clique direito em <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">index.html</code> → "Open with Live Server"</li>
+                </ol>
+            </div>
+        </div>
+        
+        <h2 style="color: #333; margin-top: 2rem; margin-bottom: 1rem;">📁 Estrutura do Projeto</h2>
+        
+        <div class="file-structure">
+website-puro/
+├── index.html          ← Abra este arquivo no navegador
+├── css/
+│   ├── variables.css   (Cores e tema)
+│   ├── base.css        (Estilos base)
+│   ├── components.css  (Componentes)
+│   └── animations.css  (Animações)
+├── js/
+│   ├── main.js         (Lógica principal)
+│   ├── carousel.js     (Carrossel)
+│   ├── header.js       (Header/Menu)
+│   └── faq.js          (FAQ)
+└── README.md           (Documentação completa)
+        </div>
+        
+        <div class="info-message">
+            💡 <strong>Dica:</strong> Todos os textos, cores e imagens podem ser personalizados editando os arquivos HTML e CSS com qualquer editor de texto.
+        </div>
+        
+        <h2 style="color: #333; margin-top: 2rem; margin-bottom: 1rem;">✨ Funcionalidades Incluídas</h2>
+        
+        <ul style="color: #666; line-height: 2; margin-left: 1.5rem;">
+            <li>✅ Header/Navbar responsivo com efeito de scroll</li>
+            <li>✅ Hero section com overlay e botões de ação</li>
+            <li>✅ Carrossel de antes e depois interativo</li>
+            <li>✅ FAQ com acordeão expandível</li>
+            <li>✅ Menu mobile hamburger</li>
+            <li>✅ Animações suaves ao scroll</li>
+            <li>✅ Design responsivo (mobile, tablet, desktop)</li>
+            <li>✅ Footer completo com links</li>
+            <li>✅ Mapa integrado (Google Maps)</li>
+            <li>✅ Suporte a toque e gesto no carrossel</li>
+        </ul>
+        
+        <h2 style="color: #333; margin-top: 2rem; margin-bottom: 1rem;">🎨 Personalizar o Website</h2>
+        
+        <div class="step">
+            <h3>Trocar Logotipo</h3>
+            <p>Edite o arquivo <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">index.html</code> e procure por:</p>
+            <div class="code">&lt;img src="/manus-storage/logo-principal_ba00035c.webp" ...&gt;</div>
+            <p style="margin-top: 0.5rem;">Substitua o caminho pelo seu logo</p>
+        </div>
+        
+        <div class="step" style="margin-top: 1rem;">
+            <h3>Alterar Cores</h3>
+            <p>Edite o arquivo <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">css/variables.css</code> e modifique as cores principais</p>
+        </div>
+        
+        <div class="step" style="margin-top: 1rem;">
+            <h3>Editar Textos</h3>
+            <p>Edite o arquivo <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">index.html</code> para alterar títulos, descrições e conteúdo</p>
+        </div>
+        
+        <div class="buttons">
+            <a href="index.html" class="btn btn-primary">Abrir Website</a>
+            <a href="README.md" class="btn btn-secondary">Ver Documentação Completa</a>
+        </div>
+        
+        <div class="footer">
+            <p>🎉 Website desenvolvido 100% com HTML, CSS e JavaScript puro</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Nenhuma dependência externa, sem frameworks, sem compiladores</p>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #ccc;">Clínica Dra. Fernanda Martello © 2026</p>
+        </div>
+    </div>
+</body>
+</html>

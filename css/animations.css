@@ -1,0 +1,514 @@
+/* ============================================
+   ANIMATIONS CSS - Animações e Transições
+   ============================================ */
+
+/* ========== CAROUSEL ========== */
+.carousel-container {
+    position: relative;
+    margin-bottom: var(--spacing-12);
+}
+
+.carousel {
+    overflow: hidden;
+    margin: 0 var(--spacing-8);
+}
+
+@media (max-width: 768px) {
+    .carousel {
+        margin: 0;
+    }
+}
+
+.carousel-track {
+    display: flex;
+    gap: var(--spacing-12);
+    transition: transform 0.5s ease-out;
+}
+
+.carousel-item {
+    flex-shrink: 0;
+    width: 320px;
+    animation: slideInRight 0.6s ease-out;
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        width: 100%;
+    }
+}
+
+.carousel-item-image {
+    width: 100%;
+    height: 16rem;
+    background: linear-gradient(135deg, rgba(200, 169, 106, 0.1), rgba(200, 169, 106, 0.05));
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-4);
+    text-align: center;
+    overflow: hidden;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+}
+
+.carousel-item-image p {
+    color: var(--muted-foreground);
+    margin: 0;
+}
+
+.carousel-item-image .primary-text {
+    display: block;
+    color: var(--primary);
+    font-weight: 600;
+    margin-top: var(--spacing-4);
+}
+
+.carousel-item h3 {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-2);
+}
+
+.carousel-item p {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+}
+
+.carousel-item p:last-child {
+    font-size: 0.75rem;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+/* Botões do Carrossel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.carousel-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.carousel-btn-prev {
+    left: -1.5rem;
+}
+
+.carousel-btn-next {
+    right: -1.5rem;
+}
+
+@media (max-width: 768px) {
+    .carousel-btn {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .carousel-btn svg {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .carousel-btn-prev {
+        left: var(--spacing-2);
+    }
+
+    .carousel-btn-next {
+        right: var(--spacing-2);
+    }
+}
+
+/* ========== FAQ ========== */
+.faq-container {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-top: none !important;
+    margin-bottom: var(--spacing-4);
+}
+
+.faq-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+}
+
+.faq-toggle h3 {
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: var(--foreground);
+}
+
+.faq-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--primary);
+    transition: var(--transition);
+    flex-shrink: 0;
+    margin-left: var(--spacing-4);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    margin-top: var(--spacing-4);
+}
+
+.faq-item.active .faq-content {
+    max-height: 500px;
+}
+
+.faq-content p {
+    color: var(--muted-foreground);
+    margin-bottom: 0;
+}
+
+/* ========== KEYFRAME ANIMATIONS ========== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Aplicar animações com Intersection Observer será feito no JS */
+.animate-fade-up {
+    animation: fadeUp 0.8s ease-out;
+}
+
+.animate-fade-left {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.animate-fade-right {
+    animation: fadeInRight 0.8s ease-out;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    background-color: var(--foreground);
+    color: white;
+    padding: var(--spacing-12) 0 var(--spacing-8);
+}
+
+.footer .container {
+    padding: 0 var(--spacing-6);
+}
+
+/* 1. Garante o alinhamento no topo para todas as colunas do rodapé */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: var(--spacing-8);
+    margin-bottom: var(--spacing-8);
+    align-items: flex-start; /* Alinha todas as colunas rigorosamente pelo topo */
+}
+
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: var(--spacing-4);
+    font-weight: 600;
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0;
+}
+
+.footer-section ul li {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--spacing-2);
+}
+
+.footer-section a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-section a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* 3. Ajuste milimétrico do Logotipo */
+.footer-logo {
+    height: 13rem;
+    width: auto; 
+    display: block;
+    
+    /* Puxa o topo da imagem para cima para alinhar o grafismo real com o texto ao lado */
+    margin-top: -3.8rem; 
+    
+    /* Ajusta sutilmente para a esquerda caso a imagem tenha borda transparente lateral */
+    margin-left: -1.7rem; 
+    
+    /* Remove o excesso de espaço transparente abaixo da imagem */
+    margin-bottom: -1rem; 
+}
+
+/* 2. Primeira coluna (Logo + Frase) */
+.footer-section:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha logo e frase à esquerda */
+    justify-content: flex-start;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/* 4. Ajuste milimétrico da frase abaixo da logo */
+.footer-section:first-child p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 0;
+    
+    /* Alinhamento óptico com a letra 'F' do logotipo */
+    padding-left: 0.5rem; 
+    
+    /* Largura ideal para uma quebra de linha elegante */
+    max-width: 250px; 
+}
+
+.footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-8);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.875rem;
+    flex-wrap: wrap;
+}
+
+.footer__developer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+}
+
+.footer__developer-logo {
+    height: 2.5rem;
+    width: auto;
+    margin-right: var(--spacing-2);
+}
+
+.footer__developer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.footer__developer-info strong {
+    color: white;
+}
+
+.footer__legal {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.footer__legal p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__legal-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+}
+
+.footer__legal-link:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer__legal {
+        justify-content: flex-start;
+    }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 80vh;
+        padding-top: 4rem;
+    }
+
+    .section {
+        padding: var(--spacing-12) 0;
+    }
+
+    .section-header {
+        margin-bottom: var(--spacing-12);
+    }
+
+    .cards-grid,
+    .services-grid,
+    .testimonials-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========== LOADING STATE ========== */
+.is-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* ========== UTILITY CLASSES ========== */
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-muted {
+    color: var(--muted-foreground);
+}
+
+.bg-secondary {
+    background-color: var(--secondary);
+}
+
+.gap-4 {
+    gap: var(--spacing-4);
+}
+
+.gap-6 {
+    gap: var(--spacing-6);
+}
+
+.gap-8 {
+    gap: var(--spacing-8);
+}
+
+.mb-4 {
+    margin-bottom: var(--spacing-4);
+}
+
+.mb-6 {
+    margin-bottom: var(--spacing-6);
+}
+
+.mb-8 {
+    margin-bottom: var(--spacing-8);
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+    .header,
+    .footer,
+    .carousel-btn,
+    .menu-toggle {
+        display: none;
+    }
+
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+}

@@ -1,0 +1,66 @@
+/* ============================================
+   VARIÁVEIS CSS - Tema Dourado Premium
+   ============================================ */
+
+:root {
+    /* Cores Primárias */
+    --primary: #C8A96A;
+    --primary-light: #E8D4A8;
+    --primary-dark: #A78A4F;
+    
+    /* Fundo */
+    --background: #FAFAF8;
+    --foreground: #2C2C2C;
+    
+    /* Cards e Componentes */
+    --card-bg: #FFFFFF;
+    --card-foreground: #2C2C2C;
+    
+    /* Secundário */
+    --secondary: #F5F1E8;
+    --secondary-foreground: #333333;
+    
+    /* Neutros */
+    --muted: #E8DCC8;
+    --muted-foreground: #666666;
+    --border: #E8E4D8;
+    --border-light: #F0EDE5;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+    
+    /* Espaçamentos */
+    --spacing-2: 0.5rem;
+    --spacing-4: 1rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-12: 3rem;
+    --spacing-16: 4rem;
+    
+    /* Border Radius */
+    --radius: 0.5rem;
+    --radius-lg: 1rem;
+    
+    /* Tipografia */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+    
+    /* Transitions */
+    --transition: all 0.3s ease-out;
+}
+
+/* Dark Mode (opcional para o futuro) */
+.dark {
+    --primary: #D4B896;
+    --background: #1A1A1A;
+    --foreground: #F5F5F5;
+    --card-bg: #2A2A2A;
+    --card-foreground: #F5F5F5;
+    --secondary: #333333;
+    --muted: #555555;
+    --muted-foreground: #AAAAAA;
+    --border: #444444;
+}

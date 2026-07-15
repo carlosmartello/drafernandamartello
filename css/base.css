@@ -1,0 +1,254 @@
+/* ============================================
+   BASE CSS - Reset e Estilos Fundamentais
+   ============================================ */
+
+/* Reset Universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+}
+
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-4);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: clamp(1.875rem, 4vw, 2.75rem);
+    font-weight: 700;
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+h5 {
+    font-size: 1.125rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    line-height: 1.8;
+    color: var(--muted-foreground);
+    margin-bottom: var(--spacing-4);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* Links */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Listas */
+ul, ol {
+    list-style: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* Imagens */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Botões */
+button {
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+}
+
+/* Inputs */
+input, textarea, select {
+    font-family: var(--font-body);
+}
+
+/* Container Principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-6);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-4);
+    }
+}
+
+/* Seções */
+.section {
+    padding: var(--spacing-16) 0;
+    background-color: var(--background);
+}
+
+.section.bg-secondary {
+    background-color: var(--secondary);
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-16);
+}
+
+.section-header h2 {
+    margin-bottom: var(--spacing-6);
+}
+
+.section-header p {
+    font-size: 1.25rem;
+    color: var(--muted-foreground);
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+/* Grid para seções 2 colunas */
+.section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-12);
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .section-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-8);
+    }
+}
+
+.section-image {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.section-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.section-content {
+    position: relative;
+}
+
+.section-content h2 {
+    margin-bottom: var(--spacing-6);
+}
+
+.section-content p {
+    margin-bottom: var(--spacing-4);
+}
+
+/* Divisor Dourado */
+.divider-gold {
+    width: 4rem;
+    height: 2px;
+    background: var(--primary);
+    margin: var(--spacing-8) 0;
+}
+
+/* Quote */
+.quote {
+    font-style: italic;
+    color: var(--primary);
+    font-size: 1.125rem;
+    font-weight: 500;
+    font-family: var(--font-display);
+    margin-bottom: 0 !important;
+}
+
+/* Accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Focus Visible */
+*:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Scrollbar Personalizado */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: var(--radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Utilidade: Sem selecionar texto */
+.no-select {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
